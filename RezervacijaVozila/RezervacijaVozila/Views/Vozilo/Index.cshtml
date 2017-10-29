@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RezervacijaVozila.Models.Vozilo>
+
+@{
+    ViewBag.Title = "Vozila";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Marka vozila
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GodinaProizvodnje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Registracija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojSjedecihMjesta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marka.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GodinaProizvodnje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registracija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojSjedecihMjesta)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.VoziloID }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.VoziloID }) |
+            @Html.ActionLink("Ukoni", "Delete", new { id=item.VoziloID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<br />
+<button class="button btn btn-info" type="button" onclick="location.href='@Url.Action("Create", "Vozilo")'">Dodaj vozilo</button>
+<button class="button btn btn-warning pull-right" type="button" onclick="location.href='@Url.Action("Index", "Marka")'">Marke vozila</button>

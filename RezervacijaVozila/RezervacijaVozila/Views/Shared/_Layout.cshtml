@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Rezervacija vozila</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" id="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            @Html.ActionLink("Rezervacija vozila", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" , })
+                <img alt="Rezervacije vozila" src="@Url.Content("~/favicon.ico")" @*href="@Url.Action("Index", "Home")"*@ width="50" height="50" />
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Popis rezervacija", "Index", "Rezervacija")</li>
+                    <li>@Html.ActionLink("Klijenti", "Index", "Osoba")</li>
+                    <li>@Html.ActionLink("Marke vozila", "Index", "Marka")</li>
+                    <li>@Html.ActionLink("Vozila", "Index", "Vozilo")</li>
+                    <li>@Html.ActionLink("Mjesta", "Index", "Mjesto")</li>
+                    <li @*class="active"*@>@Html.ActionLink("Županije", "Index", "Zupanija")</li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Anđela Klisović - Rezervacija vozila - My ASP.NET Application -  </p>
+        </footer>
+    </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Html.Partial("_UICultureSetup")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentCulture;
+    var cultureCode = culture.TwoLetterISOLanguageName;
+    var jsDatePattern = culture.DateTimeFormat.ShortDatePattern.ToUpper();
+    var jsTimePattern = culture.DateTimeFormat.LongTimePattern;
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('.date-picker').datetimepicker(
+        {
+            locale: '@cultureCode',
+            format: '@jsDatePattern'
+        });
+
+        $('.datetime-picker').datetimepicker(
+        {
+            locale: '@cultureCode',
+            format: '@jsDatePattern @jsTimePattern'
+        });
+
+        $.validator.methods.date = function (value, element) {
+            if (this.optional(element) && (value == '' || value == undefined || value == null))
+                return true;
+
+            var shortDatePattern = '@jsDatePattern';
+
+            return moment(value, shortDatePattern).isValid();
+        };
+    });
+</script>
+

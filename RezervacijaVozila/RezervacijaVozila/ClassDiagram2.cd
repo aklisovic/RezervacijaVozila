@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical">
+  <Class Name="RezervacijaVozila.Models.Rezervacija">
+    <Position X="3.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAIAAAAgQAAAAACAAAIACAAIBAACEA=</HashCode>
+      <FileName>Models\Rezervacija.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RezervacijaVozila.Models.Vozilo">
+    <Position X="0.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAERAAAAABAAAAAAAAAAABAAAAAAAAAAAAIAgAAAA=</HashCode>
+      <FileName>Models\Vozilo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RezervacijaVozila.Models.Osoba">
+    <Position X="5.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAABAAAAAAAAgQAAAAgAAAAAACAACAAAAEQ=</HashCode>
+      <FileName>Models\Osoba.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

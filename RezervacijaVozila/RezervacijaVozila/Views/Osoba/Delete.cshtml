@@ -1,0 +1,95 @@
+﻿@model RezervacijaVozila.Models.Osoba
+
+@{
+    ViewBag.Title = "Ukoni";
+}
+
+<h2>Ukoni</h2>
+
+<div>
+    <h4>Osoba</h4>
+
+    <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4><b>Upozorenje!</b></h4>
+        <p><b>Jeste li sigurni da želite izbrisati ovo?</b></p>
+    </div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OIB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OIB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumRodenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumRodenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mjesto.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mjesto.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojVozackeDozvole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojVozackeDozvole)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Ukoni" class="btn btn-danger" />
+            </div>
+        </div>
+
+        <div>
+            <br>
+            @Html.ActionLink("Natrag na popis", "Index")
+        </div>
+    }
+
+</div>

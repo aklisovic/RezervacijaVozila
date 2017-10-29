@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RezervacijaVozila.Models.Marka>
+
+@{
+    ViewBag.Title = "Marke vozila";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.MarkaID }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.MarkaID }) |
+            @Html.ActionLink("Ukoni", "Delete", new { id=item.MarkaID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<br>
+<button class="button btn btn-info" type="button" onclick="location.href='@Url.Action("Create", "Marka")'">Dodaj novu marku</button>

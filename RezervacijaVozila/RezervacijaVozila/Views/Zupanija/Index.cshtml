@@ -1,0 +1,45 @@
+﻿@model IEnumerable<RezervacijaVozila.Models.Zupanija>
+
+@{
+    ViewBag.Title = "Županije";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PozivniBroj)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostanskiBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PozivniBroj)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.ZupanijaID }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.ZupanijaID }) |
+            @Html.ActionLink("Ukoni", "Delete", new { id=item.ZupanijaID })
+        </td>
+    </tr>
+}
+    
+</table>
+
+<br>
+<button class="button btn btn-info" type="button" onclick="location.href='@Url.Action("Create", "Zupanija")'">Dodaj županiju</button>
